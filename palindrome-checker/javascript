@@ -1,0 +1,13 @@
+function checker(){
+    var text = document.getElementById('text-input').value;
+    if (!text) {
+        alert('Please input a value');
+        return;
+    }
+    var originalText = text.toLowerCase().replace(/[\W_]/g, '');
+    var reversedText = originalText.split('').reverse().join('');
+    var result = originalText === reversedText ? ' is a palindrome' : ' is not a palindrome';
+    document.getElementById('result').innerText = text + result;
+};
+const button = document.getElementById('check-btn')
+button.addEventListener('click', checker);
